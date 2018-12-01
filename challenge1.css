@@ -1,9 +1,12 @@
 
 .bx-creative.bx-creative-1 {
+  background-image: url(./lock-2.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 100px 100px;
   background-color: #FEC134;
   padding-top: 0.80vw;
   padding-bottom: 4vw;
-  /* font-family: LufthansaHead,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif; */
 }
 .bx-type {
   height: 0;
@@ -29,21 +32,18 @@
 }
 
 p.bx-row-headline-2 {
-
   margin-top: -0.35em;
-
 }
 
 .bx-row.bx-row-logo {
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
-
+  margin-bottom: 2vw;
 }
 
 div.bx-group.bx-group-1 div.bx-row.bx-row-logo img.bx-row.bx-row-logo-1 {
   height: 40px;
   width: 40px;
-  /* padding: 0 inherit 5vh inherit; */
   grid-column: 2 / -3;
   justify-self: right;
   align-self: center;
@@ -53,34 +53,29 @@ div.bx-group.bx-group-1 div.bx-row.bx-row-logo img.bx-row.bx-row-logo-1 {
   color: white;
   font-weight: 900;
   font-size: calc(1.2em + 1vmin);
-  /* padding-bottom: 2vh; */
   justify-self: left;
   align-self: center;
-  /* padding-top: calc(0.25vw + 0.25vh); */
   padding-left: 0.75vw;
 }
 
-div.bx-step.bx-step-1.bx-step-active div.bx-group.bx-group-2{
-padding: 0 10vw 0 10vw;
+div.bx-step.bx-step-1.bx-step-active div.bx-group.bx-group-2 {
+  display: grid;
+  grid-template-columns: 0.60fr;
+  justify-content: center;
 }
-/*
-#2B5BA2
-#173388
-#020969 */
+
 
 div.bx-row.bx-row-submit {
   background-image: linear-gradient(to bottom, rgba(43,91,162,1) 0%,rgba(23,51,136,1) 49%,rgba(2,9,105,1) 100%);
   box-shadow: 0vw 0.8vw 1.2vw -0.65vw black;
 
 }
-/* #2B5BA2
-#99A4CA
-#9C9DC5 */
+
 #submit {
   background: transparent;
   background-image: url(./right-arrow.svg), linear-gradient(to bottom, rgba(43,91,162,0.8) 0%,rgba(153,164,202,0.9) 49%,rgba(156,157,197,1) 100%);
   background-repeat: no-repeat;
-  background-position: 4% 50%, 20% 0%;
+  background-position: 4% 50%, calc(1.2em + 1vmin) 0%;
   background-size: auto auto, 1px;
   border: transparent;
   padding-top: 0.5vh;
@@ -89,11 +84,6 @@ div.bx-row.bx-row-submit {
 
   font-size: calc(1.2em + 1vmin);
 }
-
-/* .bx-row-email {
-
-  background: transparent;
-} */
 
 .arrow-icon {
   display: inline-block;
@@ -108,7 +98,7 @@ div.bx-group.bx-group-2 div.bx-row.bx-row-email input {
   font-size: calc(0.4em + 1vmin);
   border-style: hidden;
 }
-/* div.bx-row.bx-row-email {
-  padding-left: 25%;
-  padding-right: 25%;
-} */
+
+body > div.bxc.bx-type-overlay.bx-effect-1.bx-impress > div.bx-type > div > a {
+  opacity: 0;
+}
