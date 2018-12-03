@@ -1,41 +1,12 @@
-document.addEventListener("DOMContentLoaded", function (){
+// document.addEventListener("DOMContentLoaded", function (){
 
   let productName = document.querySelector("div.product-name").innerText
-  let productPrice = document.querySelector("span.price-standard").innerText
-  let mainDiv = document.getElementById("main")
-  let rightDiv = document.querySelector("div.product-detail-outer")
+  let productPrice = document.querySelector("span.price-sales").innerText
+  let detailsDiv = document.querySelector("div.product-detail-sections")
+  let rightDiv = document.querySelector("#primary")
   let swatchLinks = document.querySelectorAll("a.swatchanchor")
-  let modalDiv = document.getElementById("discountModal")
-  let closeSpan = document.querySelector(".close")
 
   let discountedPrice = "$" + parseInt(productPrice.substring(1)) * 0.85
-
-  function getAllSizeLinks (){
-    rightDiv.addEventListener("click", (event) => {
-      if (event.target.title.includes("Size") && event.target.parentNode.className.includes("selectable")) {
-        if (!event.target.parentNode.className.includes("selected")) {
-          event.preventDefault()
-          unselect()
-          event.target.parentNode.className += " selected"
-
-          closeSpan.addEventListener("click", (event) => {
-            modalDiv.style.display = "none"
-          })
-          modalDiv.style.display = "block"
-        }
-      console.log(event)
-      }
-    })
-
-    function unselect () {
-      swatchLinks.forEach((link) => {
-        if (link.title.includes("Size") && link.parentNode.className.includes("selectable") && link.parentNode.className.includes("selected")) {
-          link.parentNode.className = "selectable"
-        }
-      })
-    }
-
-  }
 
   function createModal () {
     let modal =
@@ -47,10 +18,39 @@ document.addEventListener("DOMContentLoaded", function (){
        </div>`
 
     mainDiv.innerHTML += modal
-      getAllSizeLinks()
+    addSizeEventListener()
   }
+
+  function addSizeEventListener (){
+    let modalDiv = document.getElementById("discountModal")
+    let closeSpan = document.querySelector(".close")
+
+    rightDiv.addEventListener("click", (event) => {
+      event.preventDefault()
+      if (event.target.title.includes("Size") && event.target.parentNode.className.includes("selectable")) {
+        if (!event.target.parentNode.className.includes("selected")) {
+          event.preventDefault()
+          unselect()
+          event.target.parentNode.className += " selected"
+            closeSpan.addEventListener("click", (event) => {
+              modalDiv.style.display = "none"
+            })
+          modalDiv.style.display = "block"
+        }
+      }
+    })
+
+    function unselect () {
+      swatchLinks.forEach((link) => {
+        if (link.title.includes("Size") && link.parentNode.className.includes("selectable") && link.parentNode.className.includes("selected")) {
+          link.parentNode.className = "selectable"
+        }
+      })
+    }
+  }
+
+
 
   createModal()
 
-
-})
+    // })
